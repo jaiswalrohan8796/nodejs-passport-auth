@@ -64,7 +64,7 @@ passport.use(
             clientID: process.env.facebookclientID,
             clientSecret: process.env.facebookclientSecret,
             callbackURL:
-                "https://node-passportjs-auth.herokuapp.com/auth/callback",
+                "https://node-passportjs-auth.herokuapp.com/auth/facebook/callback",
         },
         (accessToken, refreshToken, profile, done) => {
             User.find({ "oauth.facebook.facebookID": profile.id })

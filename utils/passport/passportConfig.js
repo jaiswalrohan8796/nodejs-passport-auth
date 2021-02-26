@@ -23,7 +23,8 @@ passport.use(
         {
             clientID: process.env.googleclientID,
             clientSecret: process.env.googleclientSecret,
-            callbackURL: "http://localhost:3000/auth/google/callback",
+            callbackURL:
+                "https://node-passportjs-auth.herokuapp.com/auth/google/callback",
         },
         (accessToken, refreshToken, profile, done) => {
             User.find({ "oauth.google.googleID": profile.id })
@@ -62,7 +63,8 @@ passport.use(
         {
             clientID: process.env.facebookclientID,
             clientSecret: process.env.facebookclientSecret,
-            callbackURL: "http://localhost:3000/auth/facebook/callback",
+            callbackURL:
+                "https://node-passportjs-auth.herokuapp.com/auth/callback",
         },
         (accessToken, refreshToken, profile, done) => {
             User.find({ "oauth.facebook.facebookID": profile.id })

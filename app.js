@@ -12,7 +12,7 @@ const passport = require("passport");
 const authRoutes = require("./routes/authRoutes");
 
 //config
-const PORT = process.env.PORT | 3000;
+const PORT = process.env.PORT || 3000;
 require("dotenv").config();
 const app = express();
 app.use(express.json());
@@ -27,7 +27,7 @@ app.use(
         saveUnitialized: false,
     })
 );
-app.use(flash())
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 //routes

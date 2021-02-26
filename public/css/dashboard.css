@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #082d54;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main {
+    padding: 1rem;
+    width: 400px;
+    border-radius: 50px;
+    background: #082d54;
+    box-shadow: 23px 23px 63px #06213d, -23px -23px 63px #0a396b;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover,
+a:active {
+    text-decoration: none;
+    color: white;
+}

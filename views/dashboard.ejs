@@ -22,8 +22,8 @@
         </header>
         <h6>Welcome, <%= user.name%>
         </h6>
+        <h6>You are authenticated with passport.js</h6>
         <% if (user.image) {%>
-            <h6>You are authenticated with passport.js</h6>
             <img src="<%= user.image %>" alt="profile image">
             <% } %>
                 <br>

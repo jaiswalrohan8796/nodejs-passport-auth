@@ -23,15 +23,14 @@ passport.use(
         {
             clientID: process.env.googleclientID,
             clientSecret: process.env.googleclientSecret,
-            callbackURL:
-                "https://node-passportjs-auth.herokuapp.com/auth/google/callback",
+            callbackURL: "http://localhost:3000/auth/google/callback",
         },
         (accessToken, refreshToken, profile, done) => {
-            User.find({ "oauth.google.googleID": profile.id })
+            User.findOne({ "oauth.google.googleID": profile.id })
                 .then((currentUser) => {
-                    if (currentUser.length > 0) {
+                    if (currentUser) {
                         console.log("User already exist");
-                        done(null, currentUser[0]);
+                        done(null, currentUser);
                     } else {
                         new User({
                             name: profile.displayName,
@@ -63,14 +62,13 @@ passport.use(
         {
             clientID: process.env.facebookclientID,
             clientSecret: process.env.facebookclientSecret,
-            callbackURL:
-                "https://node-passportjs-auth.herokuapp.com/auth/facebook/callback",
+            callbackURL: "http://localhost:3000/auth/facebook/callback",
         },
         (accessToken, refreshToken, profile, done) => {
-            User.find({ "oauth.facebook.facebookID": profile.id })
+            User.findOne({ "oauth.facebook.facebookID": profile.id })
                 .then((currentUser) => {
-                    if (currentUser.length > 0) {
-                        done(null, currentUser[0]);
+                    if (currentUser) {
+                        done(null, currentUser);
                     } else {
                         new User({
                             name: profile.displayName,

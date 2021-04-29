@@ -1,7 +1,6 @@
 //requires
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const session = require("express-session");
@@ -16,7 +15,7 @@ const PORT = process.env.PORT || 3000;
 require("dotenv").config();
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -30,6 +29,7 @@ app.use(
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
 //routes
 app.get("/", (req, res, next) => {
     if (req.user) {

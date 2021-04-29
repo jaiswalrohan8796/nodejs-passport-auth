@@ -1,5 +1,5 @@
 # Authentication in NodeJS using Passport.js
-##### This project is a part of my blog [All about Authentication (2/3): Passport.js & OAuth]()
+##### This project is a part of my blog [All about Authentication (2/3): Passport.js & OAuth](https://rohanjaiswal.hashnode.dev/all-about-authentication-23-passportjs-and-oauth)
 ##### It demonstrates use of passport.js with local strategy, Google OAuth strategy, and Facebook OAuth strategy.
 
 ### Usage
